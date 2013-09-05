@@ -1,0 +1,81 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="MainMaster, App_Web_ne5paapb" %>
+
+<%@ Register Src="~/UserControls/wucSignUp.ascx" TagPrefix="uc1" TagName="wucSignUp" %>
+<%@ Register Src="~/UserControls/wucLogin.ascx" TagPrefix="uc1" TagName="wucLogin" %>
+
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script src="js/WaterMark.min.js"></script>
+    <script src="js/TAPD.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("[id*=Password]").WaterMark();
+
+            //To change the color of Watermark
+        });
+</script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" style="vertical-align: middle;">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div style="position: relative; top: 40px;">
+
+
+            <div style="width: 16%; float: left">&nbsp;</div>
+            <div style="width: 68%; text-align: center; float: left">
+                <div>
+                    <div style="float: left">
+                        <img src="imgs/logo.png"  />
+                    </div>
+                    <div style="float: right">
+                        <div>
+                            <div id="OpenSignUp" style="width: 80px; background-color: rgb(252, 99, 101); padding: 10px; cursor: pointer;">
+                                <div style="color: white">JOIN US!</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="imgs/home.png"  style="width: 100%;" id="imgLogin"/></div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div style="width: 16%; float: left">&nbsp;</div>
+            <div id="backgroundpopup" runat="server" class="backgroundpopup" style="display: none;">
+            </div>
+            <div class="SignUp" id="divSignUp" runat="server" style="display: none;">
+                <div align="right" style="position: relative;">
+                    <div style="padding-right: 5px; position: absolute; color: rgb(255, 255, 255); text-decoration: none; cursor: pointer; right: -150px; top: 27px;"
+                        id="SignUpclose">
+                        <img src="imgs/close.png" />
+                    </div>
+                    <uc1:wucSignUp runat="server" ID="wucSignUp" ClientIDMode="Static" />
+                   
+                </div>
+            </div>
+            <div class="Login" id="divLogin" runat="server" style="display: none;">
+                <div align="right" style="position: relative;">
+                    <div style="padding-right: 5px; position: absolute; color: rgb(255, 255, 255); text-decoration: none; cursor: pointer; right: -150px; top: 27px;"
+                        id="Loginclose">
+                        <img src="imgs/close.png" />
+                    </div>
+                     <uc1:wucLogin runat="server" id="wucLogin" />
+                </div>
+            </div>
+
+
+        </div>
+    </form>
+</body>
+</html>

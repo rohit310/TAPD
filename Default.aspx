@@ -1,4 +1,4 @@
-﻿<%@ page language="C#" autoeventwireup="true" inherits="_Default, App_Web_kq3wkrak" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="_Default, App_Web_ne5paapb" %>
 
 <!DOCTYPE html>
 
@@ -8,9 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    fgjksdfsdfd
-    </div>
+        
     </form>
 </body>
 </html>
